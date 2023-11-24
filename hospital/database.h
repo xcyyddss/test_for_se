@@ -8,7 +8,6 @@
 #include <QtSql>
 #include <QStringList>
 
-
 void database_init();
 void init_manager();
 void insert_data(QString table_name,QLinkedList<QString> data);
