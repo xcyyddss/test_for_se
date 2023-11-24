@@ -1,7 +1,6 @@
 #include "database.h"
 
 QSqlDatabase db;
-//short form:person->p appointment->a diagnosis->d prescription->r schedule->s
 
 void database_init(){
     db = QSqlDatabase::addDatabase("QSQLITE");
