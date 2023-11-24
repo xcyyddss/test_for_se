@@ -29,29 +29,29 @@ public:
 signals:
 
 public slots:
-    void solve1(int);
-    void solvep1(int);
-    void solvep2(int);
-    void solvep3(int);
-    void solvep4(int);
-    void solvep5(int);
-    void solved1(int);
-    void solved2(int);
-    void solved3(int);
-    void solved4(int);
-    void solved5(int);
-    void solved6(int);
-    void solved7(int);
-    void solved8(int);
-    void solveph1(int);
-    void solveph2(int);
-    void solveph3(int);
-    void solvem1(int);
-    void solvem2(int);
-    void solvem3(int);
-    void solvem4(int);
-    void solvem5(int);
-    void solvem6(int);
+    void solve_1(int);
+    void solve_p_1(int);
+    void solve_p_2(int);
+    void solve_p_3(int);
+    void solve_p_4(int);
+    void solve_p_5(int);
+    void solve_d_1(int);
+    void solve_d_2(int);
+    void solve_d_3(int);
+    void solve_d_4(int);
+    void solve_d_5(int);
+    void solve_d_6(int);
+    void solve_d_7(int);
+    void solve_d_8(int);
+    void solve_ph_1(int);
+    void solve_ph_2(int);
+    void solve_ph_3(int);
+    void solve_m_1(int);
+    void solve_m_2(int);
+    void solve_m_3(int);
+    void solve_m_4(int);
+    void solve_m_5(int);
+    void solve_m_6(int);
 };
 QString list_to_str(QLinkedList<QLinkedList<QString>> list,int index);
 

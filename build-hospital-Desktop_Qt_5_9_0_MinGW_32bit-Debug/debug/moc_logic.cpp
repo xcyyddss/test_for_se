@@ -22,7 +22,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_logic_t {
     QByteArrayData data[25];
-    char stringdata0[193];
+    char stringdata0[238];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,37 +32,39 @@ struct qt_meta_stringdata_logic_t {
 static const qt_meta_stringdata_logic_t qt_meta_stringdata_logic = {
     {
 QT_MOC_LITERAL(0, 0, 5), // "logic"
-QT_MOC_LITERAL(1, 6, 6), // "solve1"
-QT_MOC_LITERAL(2, 13, 0), // ""
-QT_MOC_LITERAL(3, 14, 7), // "solvep1"
-QT_MOC_LITERAL(4, 22, 7), // "solvep2"
-QT_MOC_LITERAL(5, 30, 7), // "solvep3"
-QT_MOC_LITERAL(6, 38, 7), // "solvep4"
-QT_MOC_LITERAL(7, 46, 7), // "solvep5"
-QT_MOC_LITERAL(8, 54, 7), // "solved1"
-QT_MOC_LITERAL(9, 62, 7), // "solved2"
-QT_MOC_LITERAL(10, 70, 7), // "solved3"
-QT_MOC_LITERAL(11, 78, 7), // "solved4"
-QT_MOC_LITERAL(12, 86, 7), // "solved5"
-QT_MOC_LITERAL(13, 94, 7), // "solved6"
-QT_MOC_LITERAL(14, 102, 7), // "solved7"
-QT_MOC_LITERAL(15, 110, 7), // "solved8"
-QT_MOC_LITERAL(16, 118, 8), // "solveph1"
-QT_MOC_LITERAL(17, 127, 8), // "solveph2"
-QT_MOC_LITERAL(18, 136, 8), // "solveph3"
-QT_MOC_LITERAL(19, 145, 7), // "solvem1"
-QT_MOC_LITERAL(20, 153, 7), // "solvem2"
-QT_MOC_LITERAL(21, 161, 7), // "solvem3"
-QT_MOC_LITERAL(22, 169, 7), // "solvem4"
-QT_MOC_LITERAL(23, 177, 7), // "solvem5"
-QT_MOC_LITERAL(24, 185, 7) // "solvem6"
+QT_MOC_LITERAL(1, 6, 7), // "solve_1"
+QT_MOC_LITERAL(2, 14, 0), // ""
+QT_MOC_LITERAL(3, 15, 9), // "solve_p_1"
+QT_MOC_LITERAL(4, 25, 9), // "solve_p_2"
+QT_MOC_LITERAL(5, 35, 9), // "solve_p_3"
+QT_MOC_LITERAL(6, 45, 9), // "solve_p_4"
+QT_MOC_LITERAL(7, 55, 9), // "solve_p_5"
+QT_MOC_LITERAL(8, 65, 9), // "solve_d_1"
+QT_MOC_LITERAL(9, 75, 9), // "solve_d_2"
+QT_MOC_LITERAL(10, 85, 9), // "solve_d_3"
+QT_MOC_LITERAL(11, 95, 9), // "solve_d_4"
+QT_MOC_LITERAL(12, 105, 9), // "solve_d_5"
+QT_MOC_LITERAL(13, 115, 9), // "solve_d_6"
+QT_MOC_LITERAL(14, 125, 9), // "solve_d_7"
+QT_MOC_LITERAL(15, 135, 9), // "solve_d_8"
+QT_MOC_LITERAL(16, 145, 10), // "solve_ph_1"
+QT_MOC_LITERAL(17, 156, 10), // "solve_ph_2"
+QT_MOC_LITERAL(18, 167, 10), // "solve_ph_3"
+QT_MOC_LITERAL(19, 178, 9), // "solve_m_1"
+QT_MOC_LITERAL(20, 188, 9), // "solve_m_2"
+QT_MOC_LITERAL(21, 198, 9), // "solve_m_3"
+QT_MOC_LITERAL(22, 208, 9), // "solve_m_4"
+QT_MOC_LITERAL(23, 218, 9), // "solve_m_5"
+QT_MOC_LITERAL(24, 228, 9) // "solve_m_6"
 
     },
-    "logic\0solve1\0\0solvep1\0solvep2\0solvep3\0"
-    "solvep4\0solvep5\0solved1\0solved2\0solved3\0"
-    "solved4\0solved5\0solved6\0solved7\0solved8\0"
-    "solveph1\0solveph2\0solveph3\0solvem1\0"
-    "solvem2\0solvem3\0solvem4\0solvem5\0solvem6"
+    "logic\0solve_1\0\0solve_p_1\0solve_p_2\0"
+    "solve_p_3\0solve_p_4\0solve_p_5\0solve_d_1\0"
+    "solve_d_2\0solve_d_3\0solve_d_4\0solve_d_5\0"
+    "solve_d_6\0solve_d_7\0solve_d_8\0solve_ph_1\0"
+    "solve_ph_2\0solve_ph_3\0solve_m_1\0"
+    "solve_m_2\0solve_m_3\0solve_m_4\0solve_m_5\0"
+    "solve_m_6"
 };
 #undef QT_MOC_LITERAL
 
@@ -138,29 +140,29 @@ void logic::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void 
         logic *_t = static_cast<logic *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->solve1((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 1: _t->solvep1((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 2: _t->solvep2((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 3: _t->solvep3((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 4: _t->solvep4((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 5: _t->solvep5((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 6: _t->solved1((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 7: _t->solved2((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 8: _t->solved3((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 9: _t->solved4((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 10: _t->solved5((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 11: _t->solved6((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 12: _t->solved7((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 13: _t->solved8((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 14: _t->solveph1((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 15: _t->solveph2((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 16: _t->solveph3((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 17: _t->solvem1((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 18: _t->solvem2((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 19: _t->solvem3((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 20: _t->solvem4((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 21: _t->solvem5((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 22: _t->solvem6((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 0: _t->solve_1((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 1: _t->solve_p_1((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 2: _t->solve_p_2((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 3: _t->solve_p_3((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 4: _t->solve_p_4((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 5: _t->solve_p_5((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 6: _t->solve_d_1((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 7: _t->solve_d_2((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 8: _t->solve_d_3((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 9: _t->solve_d_4((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 10: _t->solve_d_5((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 11: _t->solve_d_6((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 12: _t->solve_d_7((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 13: _t->solve_d_8((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 14: _t->solve_ph_1((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 15: _t->solve_ph_2((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 16: _t->solve_ph_3((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 17: _t->solve_m_1((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 18: _t->solve_m_2((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 19: _t->solve_m_3((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 20: _t->solve_m_4((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 21: _t->solve_m_5((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 22: _t->solve_m_6((*reinterpret_cast< int(*)>(_a[1]))); break;
         default: ;
         }
     }

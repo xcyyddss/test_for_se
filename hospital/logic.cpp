@@ -15,13 +15,13 @@ logic::logic(QWidget *parent) : QWidget(parent)
     QLinkedList<QString> list;
     list<<QString("2")<<QString("登录");
     opwindow[0] = new OperationWindow(this,type,list);
-    connect(opwindow[0],SIGNAL(button_signal(int)),this,SLOT(solve1(int)));
+    connect(opwindow[0],SIGNAL(button_signal(int)),this,SLOT(solve_1(int)));
     stackedWidget->addWidget(opwindow[0]);
     stackedWidget->show();
     stackedWidget->setCurrentWidget(opwindow[0]);
 }
 
-void logic::solve1(int _){
+void logic::solve_1(int _){
     QString ID = opwindow[0]->line[0]->text();
     QString key = opwindow[0]->line[1]->text();
     QString table_name = "Person";
@@ -48,7 +48,7 @@ void logic::solve1(int _){
             list<<"预约"<<"查看病历"<<"查看处方"<<"查看预约记录"<<"返回";
             if(opwindow[1]==nullptr){
                 opwindow[1] = new OperationWindow(this,type,list);
-                connect(opwindow[1],SIGNAL(button_signal(int)),this,SLOT(solvep1(int)));
+                connect(opwindow[1],SIGNAL(button_signal(int)),this,SLOT(solve_p_1(int)));
                 stackedWidget->addWidget(opwindow[1]);
             }
             stackedWidget->setCurrentWidget(opwindow[1]);
@@ -60,7 +60,7 @@ void logic::solve1(int _){
             list<<"查看日程"<<"接诊"<<"查看处方"<<"返回";
             if(opwindow[11]==nullptr){
                 opwindow[11] = new OperationWindow(this,type,list);
-                connect(opwindow[11],SIGNAL(button_signal(int)),this,SLOT(solved1(int)));
+                connect(opwindow[11],SIGNAL(button_signal(int)),this,SLOT(solve_d_1(int)));
                 stackedWidget->addWidget(opwindow[11]);
             }
             stackedWidget->setCurrentWidget(opwindow[11]);
@@ -72,7 +72,7 @@ void logic::solve1(int _){
             list<<"查看日程"<<"查看处方"<<"返回";
             if(opwindow[21]==nullptr){
                 opwindow[21] = new OperationWindow(this,type,list);
-                connect(opwindow[21],SIGNAL(button_signal(int)),this,SLOT(solveph1(int)));
+                connect(opwindow[21],SIGNAL(button_signal(int)),this,SLOT(solve_ph_1(int)));
                 stackedWidget->addWidget(opwindow[21]);
             }
             stackedWidget->setCurrentWidget(opwindow[21]);
@@ -84,7 +84,7 @@ void logic::solve1(int _){
             list<<"注册"<<"删除"<<"修改信息"<<"制定/修改日程"<<"查询"<<"返回";
             if(opwindow[31]==nullptr){
                 opwindow[31] = new OperationWindow(this,type,list);
-                connect(opwindow[31],SIGNAL(button_signal(int)),this,SLOT(solvem1(int)));
+                connect(opwindow[31],SIGNAL(button_signal(int)),this,SLOT(solve_m_1(int)));
                 stackedWidget->addWidget(opwindow[31]);
             }
             stackedWidget->setCurrentWidget(opwindow[31]);
@@ -92,7 +92,7 @@ void logic::solve1(int _){
     }
 }
 
-void logic::solvep1(int index){
+void logic::solve_p_1(int index){
     if(index == 0){
         QString type = "write_and_show_and_press";
         QLinkedList<QString> write_list;
@@ -103,7 +103,7 @@ void logic::solvep1(int index){
         list<<write_list<<press_list;
         if(opwindow[2]==nullptr){
             opwindow[2] = new OperationWindow(this,type,list);
-            connect(opwindow[2],SIGNAL(button_signal(int)),this,SLOT(solvep2(int)));
+            connect(opwindow[2],SIGNAL(button_signal(int)),this,SLOT(solve_p_2(int)));
             stackedWidget->addWidget(opwindow[2]);
         }
         stackedWidget->setCurrentWidget(opwindow[2]);
@@ -118,7 +118,7 @@ void logic::solvep1(int index){
         list<<write_list<<press_list;
         if(opwindow[3]==nullptr){
             opwindow[3] = new OperationWindow(this,type,list);
-            connect(opwindow[3],SIGNAL(button_signal(int)),this,SLOT(solvep3(int)));
+            connect(opwindow[3],SIGNAL(button_signal(int)),this,SLOT(solve_p_3(int)));
             stackedWidget->addWidget(opwindow[3]);
         }
         stackedWidget->setCurrentWidget(opwindow[3]);
@@ -133,7 +133,7 @@ void logic::solvep1(int index){
         list<<write_list<<press_list;
         if(opwindow[4]==nullptr){
             opwindow[4] = new OperationWindow(this,type,list);
-            connect(opwindow[4],SIGNAL(button_signal(int)),this,SLOT(solvep4(int)));
+            connect(opwindow[4],SIGNAL(button_signal(int)),this,SLOT(solve_p_4(int)));
             stackedWidget->addWidget(opwindow[4]);
         }
         stackedWidget->setCurrentWidget(opwindow[4]);
@@ -148,7 +148,7 @@ void logic::solvep1(int index){
         list<<write_list<<press_list;
         if(opwindow[5]==nullptr){
             opwindow[5] = new OperationWindow(this,type,list);
-            connect(opwindow[5],SIGNAL(button_signal(int)),this,SLOT(solvep5(int)));
+            connect(opwindow[5],SIGNAL(button_signal(int)),this,SLOT(solve_p_5(int)));
             stackedWidget->addWidget(opwindow[5]);
         }
         stackedWidget->setCurrentWidget(opwindow[5]);
@@ -157,7 +157,7 @@ void logic::solvep1(int index){
         stackedWidget->setCurrentWidget(opwindow[0]);
     }
 }
-void logic::solvep2(int index){
+void logic::solve_p_2(int index){
     if(index == 0){
         QString word = opwindow[2]->line[0]->text();
         patient->check_doctor();
@@ -175,7 +175,7 @@ void logic::solvep2(int index){
         stackedWidget->setCurrentWidget(opwindow[1]);
     }
 }
-void logic::solvep3(int index){
+void logic::solve_p_3(int index){
     if(index == 0){
         QString date = opwindow[3]->line[0]->text();
         patient->check_diagnosis();
@@ -187,7 +187,7 @@ void logic::solvep3(int index){
         stackedWidget->setCurrentWidget(opwindow[1]);
     }
 }
-void logic::solvep4(int index){
+void logic::solve_p_4(int index){
     if(index == 0){
         QString date = opwindow[4]->line[0]->text();
         patient->check_prescription();
@@ -199,7 +199,7 @@ void logic::solvep4(int index){
         stackedWidget->setCurrentWidget(opwindow[1]);
     }
 }
-void logic::solvep5(int index){
+void logic::solve_p_5(int index){
     if(index == 0){
         QString date = opwindow[5]->line[0]->text();
         patient->check_appointment();
@@ -212,7 +212,7 @@ void logic::solvep5(int index){
     }
 }
 
-void logic::solved1(int index){
+void logic::solve_d_1(int index){
     if(index == 0){
         QString type = "show_and_press";
         doctor->check_schedule();
@@ -221,7 +221,7 @@ void logic::solved1(int index){
         list<<"返回";
         if(opwindow[12]==nullptr){
             opwindow[12] = new OperationWindow(this,type,list);
-            connect(opwindow[12],SIGNAL(button_signal(int)),this,SLOT(solved2(int)));
+            connect(opwindow[12],SIGNAL(button_signal(int)),this,SLOT(solve_d_2(int)));
             stackedWidget->addWidget(opwindow[12]);
         }
         stackedWidget->setCurrentWidget(opwindow[12]);
@@ -232,7 +232,7 @@ void logic::solved1(int index){
         list<<"查看预约"<<"诊断/开处方"<<"查看病历"<<"办理住院/出院"<<"返回";
         if(opwindow[13]==nullptr){
             opwindow[13] = new OperationWindow(this,type,list);
-            connect(opwindow[13],SIGNAL(button_signal(int)),this,SLOT(solved3(int)));
+            connect(opwindow[13],SIGNAL(button_signal(int)),this,SLOT(solve_d_3(int)));
             stackedWidget->addWidget(opwindow[13]);
         }
         stackedWidget->setCurrentWidget(opwindow[13]);
@@ -247,7 +247,7 @@ void logic::solved1(int index){
         list<<write_list<<press_list;
         if(opwindow[14]==nullptr){
             opwindow[14] = new OperationWindow(this,type,list);
-            connect(opwindow[14],SIGNAL(button_signal(int)),this,SLOT(solved4(int)));
+            connect(opwindow[14],SIGNAL(button_signal(int)),this,SLOT(solve_d_4(int)));
             stackedWidget->addWidget(opwindow[14]);
         }
         stackedWidget->setCurrentWidget(opwindow[14]);
@@ -257,11 +257,11 @@ void logic::solved1(int index){
     }
 }
 
-void logic::solved2(int){
+void logic::solve_d_2(int){
     stackedWidget->setCurrentWidget(opwindow[11]);
 }
 
-void logic::solved3(int index){
+void logic::solve_d_3(int index){
     if(index == 0){
         QString type = "write_and_show_and_press";
         QLinkedList<QString> write_list;
@@ -272,7 +272,7 @@ void logic::solved3(int index){
         list<<write_list<<press_list;
         if(opwindow[15]==nullptr){
             opwindow[15] = new OperationWindow(this,type,list);
-            connect(opwindow[15],SIGNAL(button_signal(int)),this,SLOT(solved5(int)));
+            connect(opwindow[15],SIGNAL(button_signal(int)),this,SLOT(solve_d_5(int)));
             stackedWidget->addWidget(opwindow[15]);
         }
         stackedWidget->setCurrentWidget(opwindow[15]);
@@ -287,7 +287,7 @@ void logic::solved3(int index){
         list<<write_list<<press_list;
         if(opwindow[16]==nullptr){
             opwindow[16] = new OperationWindow(this,type,list);
-            connect(opwindow[16],SIGNAL(button_signal(int)),this,SLOT(solved6(int)));
+            connect(opwindow[16],SIGNAL(button_signal(int)),this,SLOT(solve_d_6(int)));
             stackedWidget->addWidget(opwindow[16]);
         }
         stackedWidget->setCurrentWidget(opwindow[16]);
@@ -302,7 +302,7 @@ void logic::solved3(int index){
         list<<write_list<<press_list;
         if(opwindow[17]==nullptr){
             opwindow[17] = new OperationWindow(this,type,list);
-            connect(opwindow[17],SIGNAL(button_signal(int)),this,SLOT(solved7(int)));
+            connect(opwindow[17],SIGNAL(button_signal(int)),this,SLOT(solve_d_7(int)));
             stackedWidget->addWidget(opwindow[17]);
         }
         stackedWidget->setCurrentWidget(opwindow[17]);
@@ -317,7 +317,7 @@ void logic::solved3(int index){
         list<<write_list<<press_list;
         if(opwindow[18]==nullptr){
             opwindow[18] = new OperationWindow(this,type,list);
-            connect(opwindow[18],SIGNAL(button_signal(int)),this,SLOT(solved8(int)));
+            connect(opwindow[18],SIGNAL(button_signal(int)),this,SLOT(solve_d_8(int)));
             stackedWidget->addWidget(opwindow[18]);
         }
         stackedWidget->setCurrentWidget(opwindow[18]);
@@ -327,7 +327,7 @@ void logic::solved3(int index){
     }
 }
 
-void logic::solved4(int index){
+void logic::solve_d_4(int index){
     if(index == 0){
         QString date = opwindow[14]->line[0]->text();
         doctor->check_prescription();
@@ -340,7 +340,7 @@ void logic::solved4(int index){
     }
 }
 
-void logic::solved5(int index){
+void logic::solve_d_5(int index){
     if(index == 0){
         QString date = opwindow[15]->line[0]->text();
         doctor->check_appointment();
@@ -353,7 +353,7 @@ void logic::solved5(int index){
     }
 }
 
-void logic::solved6(int index){
+void logic::solve_d_6(int index){
     if(index == 1){
         QLinkedList<QString> diagnosis_content;
         QLinkedList<QString> prescription_content;
@@ -381,7 +381,7 @@ void logic::solved6(int index){
     }
 }
 
-void logic::solved7(int index){
+void logic::solve_d_7(int index){
     if(index == 0){
         QString date = opwindow[17]->line[0]->text();
         QString patientId = opwindow[17]->line[1]->text();
@@ -395,7 +395,7 @@ void logic::solved7(int index){
     }
 }
 
-void logic::solved8(int index){
+void logic::solve_d_8(int index){
     if(index == 0){
         QString patientId = opwindow[18]->line[0]->text();
         doctor->hospitalize(patientId);
@@ -411,7 +411,7 @@ void logic::solved8(int index){
     }
 }
 
-void logic::solveph1(int index){
+void logic::solve_ph_1(int index){
     if(index == 0){
         QString type = "show_and_press";
         pharmacist->check_schedule();
@@ -420,7 +420,7 @@ void logic::solveph1(int index){
         list<<"返回";
         if(opwindow[22]==nullptr){
             opwindow[22] = new OperationWindow(this,type,list);
-            connect(opwindow[22],SIGNAL(button_signal(int)),this,SLOT(solveph2(int)));
+            connect(opwindow[22],SIGNAL(button_signal(int)),this,SLOT(solve_ph_2(int)));
             stackedWidget->addWidget(opwindow[22]);
         }
         stackedWidget->setCurrentWidget(opwindow[22]);
@@ -435,7 +435,7 @@ void logic::solveph1(int index){
         list<<write_list<<press_list;
         if(opwindow[23]==nullptr){
             opwindow[23] = new OperationWindow(this,type,list);
-            connect(opwindow[23],SIGNAL(button_signal(int)),this,SLOT(solveph3(int)));
+            connect(opwindow[23],SIGNAL(button_signal(int)),this,SLOT(solve_ph_3(int)));
             stackedWidget->addWidget(opwindow[23]);
         }
         stackedWidget->setCurrentWidget(opwindow[23]);
@@ -445,11 +445,11 @@ void logic::solveph1(int index){
     }
 }
 
-void logic::solveph2(int index){
+void logic::solve_ph_2(int index){
     stackedWidget->setCurrentWidget(opwindow[21]);
 }
 
-void logic::solveph3(int index){
+void logic::solve_ph_3(int index){
     if(index == 0){
         QString date = opwindow[23]->line[0]->text();
         pharmacist->check_prescription(date);
@@ -462,7 +462,7 @@ void logic::solveph3(int index){
     }
 }
 
-void logic::solvem1(int index){
+void logic::solve_m_1(int index){
     if(index == 0){
         QString type = "write_and_press";
         QLinkedList<QString> write_list;
@@ -473,7 +473,7 @@ void logic::solvem1(int index){
         list<<write_list<<press_list;
         if(opwindow[32]==nullptr){
             opwindow[32] = new OperationWindow(this,type,list);
-            connect(opwindow[32],SIGNAL(button_signal(int)),this,SLOT(solvem2(int)));
+            connect(opwindow[32],SIGNAL(button_signal(int)),this,SLOT(solve_m_2(int)));
             stackedWidget->addWidget(opwindow[32]);
         }
         stackedWidget->setCurrentWidget(opwindow[32]);
@@ -488,7 +488,7 @@ void logic::solvem1(int index){
         list<<write_list<<press_list;
         if(opwindow[33]==nullptr){
             opwindow[33] = new OperationWindow(this,type,list);
-            connect(opwindow[33],SIGNAL(button_signal(int)),this,SLOT(solvem3(int)));
+            connect(opwindow[33],SIGNAL(button_signal(int)),this,SLOT(solve_m_3(int)));
             stackedWidget->addWidget(opwindow[33]);
         }
         stackedWidget->setCurrentWidget(opwindow[33]);
@@ -503,7 +503,7 @@ void logic::solvem1(int index){
         list<<write_list<<press_list;
         if(opwindow[34]==nullptr){
             opwindow[34] = new OperationWindow(this,type,list);
-            connect(opwindow[34],SIGNAL(button_signal(int)),this,SLOT(solvem4(int)));
+            connect(opwindow[34],SIGNAL(button_signal(int)),this,SLOT(solve_m_4(int)));
             stackedWidget->addWidget(opwindow[34]);
         }
         stackedWidget->setCurrentWidget(opwindow[34]);
@@ -518,7 +518,7 @@ void logic::solvem1(int index){
         list<<write_list<<press_list;
         if(opwindow[35]==nullptr){
             opwindow[35] = new OperationWindow(this,type,list);
-            connect(opwindow[35],SIGNAL(button_signal(int)),this,SLOT(solvem5(int)));
+            connect(opwindow[35],SIGNAL(button_signal(int)),this,SLOT(solve_m_5(int)));
             stackedWidget->addWidget(opwindow[35]);
         }
         stackedWidget->setCurrentWidget(opwindow[35]);
@@ -533,7 +533,7 @@ void logic::solvem1(int index){
         list<<write_list<<press_list;
         if(opwindow[36]==nullptr){
             opwindow[36] = new OperationWindow(this,type,list);
-            connect(opwindow[36],SIGNAL(button_signal(int)),this,SLOT(solvem6(int)));
+            connect(opwindow[36],SIGNAL(button_signal(int)),this,SLOT(solve_m_6(int)));
             stackedWidget->addWidget(opwindow[36]);
         }
         stackedWidget->setCurrentWidget(opwindow[36]);
@@ -543,7 +543,7 @@ void logic::solvem1(int index){
     }
 }
 
-void logic::solvem2(int index){
+void logic::solve_m_2(int index){
     if(index == 0){
         QLinkedList<QString> list;
         for(int i{};i<6;i++){
@@ -557,7 +557,7 @@ void logic::solvem2(int index){
     }
 }
 
-void logic::solvem3(int index){
+void logic::solve_m_3(int index){
     if(index == 0){
         manager->delete_person(opwindow[33]->line[0]->text());
         QMessageBox::information(opwindow[33], "信息", "删除成功！", QMessageBox::Ok);
@@ -567,7 +567,7 @@ void logic::solvem3(int index){
     }
 }
 
-void logic::solvem4(int index){
+void logic::solve_m_4(int index){
     if(index == 0){
         int idx = opwindow[34]->line[1]->text().toInt();
         QString update_data = opwindow[34]->line[2]->text();
@@ -597,7 +597,7 @@ void logic::solvem4(int index){
     }
 }
 
-void logic::solvem5(int index){
+void logic::solve_m_5(int index){
     if(index == 0){
         QLinkedList<QString> list;
         for(int i{};i<8;i++){
@@ -611,7 +611,7 @@ void logic::solvem5(int index){
     }
 }
 
-void logic::solvem6(int index){
+void logic::solve_m_6(int index){
     if(index == 0){
         int idx = opwindow[36]->line[0]->text().toInt();
         QString text_str = QString();

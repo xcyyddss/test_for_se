@@ -30,8 +30,10 @@ public:
     QLineEdit** line;
     QVBoxLayout* this_box;
     explicit OperationWindow(QWidget *parent = nullptr){}
-    explicit OperationWindow(QWidget *parent = nullptr, QString type = "", QLinkedList<QString> list = QLinkedList<QString>());
-    explicit OperationWindow(QWidget *parent = nullptr, QString type = "", QLinkedList<QLinkedList<QString>> list = QLinkedList<QLinkedList<QString>>());
+    explicit OperationWindow(QWidget *parent = nullptr, QString type = "", QLinkedList<QString> list
+                             = QLinkedList<QString>());
+    explicit OperationWindow(QWidget *parent = nullptr, QString type = "", QLinkedList<QLinkedList<QString>>
+                             list = QLinkedList<QLinkedList<QString>>());
     ~OperationWindow();
 
 signals:
